@@ -22,9 +22,9 @@ def is_matched(ch, ch1):
 def is_balanced(element):
     stack = deque()
     for ele in element:
-        if ele in ('(', '{', '['):
+        if ele == '(' or ele == '{' or ele == '[':
             stack.append(ele)
-        if ele in (')', '}', ']'):
+        if ele == ')' or ele == '}' or ele == ']':
             if is_empty(stack):
                 return False
             if not is_matched(ele, stack.pop()):
